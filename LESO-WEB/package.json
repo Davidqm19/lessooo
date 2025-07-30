@@ -1,0 +1,17 @@
+{
+  "name": "leso-fullstack-netlify",
+  "version": "1.0.0",
+  "description": "Sitio LESO con backend en Netlify Functions",
+  "main": "index.js",
+  "scripts": {
+    "start": "netlify dev"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.0",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "netlify-cli": "^15.0.0"
+  }
+}

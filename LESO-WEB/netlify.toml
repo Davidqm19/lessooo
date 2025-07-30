@@ -1,0 +1,12 @@
+[build]
+  # Directorio donde están tus archivos de frontend (HTML, CSS, JS)
+  publish = "public"
+  # Directorio donde Netlify encontrará las funciones del backend
+  functions = "netlify/functions"
+
+[[redirects]]
+  # Esto redirige cualquier llamada a /api/* hacia nuestras funciones de Netlify.
+  # Por ejemplo, una llamada a /api/login ejecutará la función login.js.
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200

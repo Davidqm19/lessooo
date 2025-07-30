@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="site_title">LESO - Gestión Patrimonial Inteligente</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class=""> <div id="scroll-progress-bar"></div>
+
+    <header class="header">
+         <div class="container header-container">
+            <a href="#home" class="logo">LESO</a>
+            <nav class="navbar">
+                 <ul>
+                    <li><a href="#home" data-lang-key="nav_home">Inicio</a></li>
+                    <li><a href="#podcast" data-lang-key="nav_podcast">Podcast</a></li>
+                    <li><a href="#contact-brokers" data-lang-key="nav_contact_brokers">Contactar Corredores</a></li>
+                    <li><a href="#careers" data-lang-key="nav_careers">Carreras</a></li>
+                    <li id="auth-link"><a href="#login" data-lang-key="nav_login">Acceso Clientes</a></li>
+                    <li id="portfolio-link" style="display: none;"><a href="#portfolio" data-lang-key="nav_portfolio">Mi Portafolio</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <div class="language-switcher"> <i class="fas fa-globe" aria-hidden="true"></i> <select id="language-select" aria-label="Seleccionar Idioma"> <option value="es">Español</option> <option value="en">English</option> <option value="de">Deutsch</option> <option value="zh">中文</option> <option value="fr">Français</option> </select> </div>
+                <button id="dark-mode-toggle" class="dark-mode-button" aria-label="Cambiar tema"> <i class="fas fa-moon" aria-hidden="true"></i> <i class="fas fa-sun" style="display: none;" aria-hidden="true"></i> </button>
+                <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="page active">
+            <div class="hero animate-on-scroll">
+                <div class="container">
+                    <h1 data-lang-key="home_title">LESO Gestión Patrimonial</h1>
+                    <p data-lang-key="home_subtitle">Construyendo tu futuro financiero con estrategias de inversión personalizadas, tecnología avanzada y un enfoque centrado en tus objetivos.</p>
+                    <a href="#contact-brokers" class="cta-button" data-lang-key="home_cta">Descubre Más</a>
+                </div>
+            </div>
+
+            <div id="home-how-it-works" class="home-subsection section-bg animate-on-scroll">
+                 <div class="container">
+                    <h2 data-lang-key="how_title">Nuestro Proceso Simplificado</h2>
+                    <p class="intro" data-lang-key="how_intro">Un camino claro y estructurado hacia tus metas financieras, diseñado para tu tranquilidad y confianza.</p>
+                    <div class="process-steps">
+                        <div class="step"> <i class="fas fa-comments fa-2x step-icon" aria-hidden="true"></i> <h3 data-lang-key="how_step1_title">1. Descubrimiento</h3> <p data-lang-key="how_step1_desc">Conversación profunda para entender tus aspiraciones, situación actual y perfil de riesgo detallado.</p> </div>
+                        <div class="step"> <i class="fas fa-clipboard-list fa-2x step-icon" aria-hidden="true"></i> <h3 data-lang-key="how_step2_title">2. Estrategia a Medida</h3> <p data-lang-key="how_step2_desc">Diseño de un plan de inversión diversificado y optimizado, alineado con tus objetivos únicos.</p> </div>
+                        <div class="step"> <i class="fas fa-cogs fa-2x step-icon" aria-hidden="true"></i> <h3 data-lang-key="how_step3_title">3. Implementación Precisa</h3> <p data-lang-key="how_step3_desc">Ejecución eficiente y oportuna de la estrategia en los mercados globales más adecuados.</p> </div>
+                        <div class="step"> <i class="fas fa-search-dollar fa-2x step-icon" aria-hidden="true"></i> <h3 data-lang-key="how_step4_title">4. Monitoreo Proactivo</h3> <p data-lang-key="how_step4_desc">Supervisión constante del portafolio con INDUS y ajustes estratégicos según las condiciones del mercado.</p> </div>
+                        <div class="step"> <i class="fas fa-chart-bar fa-2x step-icon" aria-hidden="true"></i> <h3 data-lang-key="how_step5_title">5. Comunicación Continua</h3> <p data-lang-key="how_step5_desc">Reportes periódicos claros y concisos, y reuniones estratégicas para mantenerte siempre informado.</p> </div>
+                    </div>
+                </div>
+            </div>
+
+             <div id="home-benefits" class="home-subsection animate-on-scroll">
+                <div class="container">
+                    <h2 data-lang-key="benefits_advantages_subtitle">¿Por Qué Elegir LESO?</h2>
+                    <p class="intro" data-lang-key="benefits_intro">Combinamos conocimiento experto, tecnología de vanguardia y un compromiso inquebrantable con tus intereses.</p>
+                     <div class="advantages-redesigned">
+                         <div class="advantage-card"> <div class="advantage-icon"><i class="fas fa-user-tie fa-3x" aria-hidden="true"></i></div> <h4 data-lang-key="advantage1_title">Experiencia Global</h4> <p data-lang-key="advantage1_desc">Navegamos los mercados internacionales con un profundo conocimiento local y análisis macro.</p> </div>
+                         <div class="advantage-card"> <div class="advantage-icon"><i class="fas fa-sliders-h fa-3x" aria-hidden="true"></i></div> <h4 data-lang-key="advantage2_title">Soluciones a Tu Medida</h4> <p data-lang-key="advantage2_desc">No creemos en "talla única". Tu estrategia financiera es tan única como tú.</p> </div>
+                         <div class="advantage-card"> <div class="advantage-icon"><i class="fas fa-desktop fa-3x" aria-hidden="true"></i></div> <h4 data-lang-key="advantage3_title">Plataforma INDUS</h4> <p data-lang-key="advantage3_desc">Control total, visión 360° de tu portafolio y análisis avanzados, 24/7 de forma segura.</p> </div>
+                         <div class="advantage-card"> <div class="advantage-icon"><i class="fas fa-eye fa-3x" aria-hidden="true"></i></div> <h4 data-lang-key="advantage4_title">Transparencia Absoluta</h4> <p data-lang-key="advantage4_desc">Sin sorpresas. Estructura de costos clara, informes detallados y comunicación honesta.</p> </div>
+                         <div class="advantage-card"> <div class="advantage-icon"><i class="fas fa-shield-alt fa-3x" aria-hidden="true"></i></div> <h4 data-lang-key="advantage5_title">Gestión de Riesgos</h4> <p data-lang-key="advantage5_desc">Un enfoque disciplinado y cuantitativo para proteger tu capital en cualquier escenario.</p> </div>
+                         <div class="advantage-card"> <div class="advantage-icon"><i class="fas fa-chart-line fa-3x" aria-hidden="true"></i></div> <h4 data-lang-key="advantage6_title">Enfoque en Resultados</h4> <p data-lang-key="advantage6_desc">Comprometidos activamente con la generación de valor sostenible a largo plazo para tu patrimonio.</p> </div>
+                     </div>
+                </div>
+            </div>
+
+             <div id="home-about" class="home-subsection section-bg animate-on-scroll">
+                 <div class="container">
+                     <h2 data-lang-key="about_title">Nuestra Esencia</h2>
+                     <div class="about-content-grid">
+                        <div class="about-text">
+                             <h3 data-lang-key="about_mission_vision_title">Filosofía de Inversión</h3>
+                             <p><strong data-lang-key="about_mission_label">Misión:</strong> <span data-lang-key="about_mission_text">Guiar a nuestros clientes hacia la prosperidad financiera sostenible, ofreciendo asesoramiento experto y soluciones de inversión inteligentes.</span></p>
+                             <p><strong data-lang-key="about_vision_label">Visión:</strong> <span data-lang-key="about_vision_text">Ser el socio estratégico de confianza para la gestión patrimonial en Latinoamérica, liderando con integridad e innovación.</span></p>
+                             <p data-lang-key="about_intro">Combinamos décadas de experiencia en mercados globales con tecnología de punta y un compromiso absoluto con la integridad para proteger y hacer crecer tu patrimonio.</p>
+                         </div>
+                         <div class="about-team-preview">
+                             <h3 data-lang-key="about_team_title">Conoce al Equipo</h3>
+                             <p data-lang-key="about_team_intro">Profesionales dedicados a tu éxito financiero.</p>
+                             <div class="team-grid-condensed">
+                                 <div class="team-member-condensed"> <img src="https://via.placeholder.com/80/053B50/FFFFFF?text=L1" alt="Foto Líder 1" class="team-photo-condensed"> <div><h4>David Quintero Manjarrés</h4><p class="team-title" data-lang-key="team_title_1">CEO & Estratega Jefe</p></div> </div>
+                                 <div class="team-member-condensed"> <img src="https://via.placeholder.com/80/176B87/FFFFFF?text=L2" alt="Foto Líder 2" class="team-photo-condensed"> <div><h4>Líder Ejemplo 2</h4><p class="team-title" data-lang-key="team_title_2">Directora de Inversiones</p></div> </div>
+                                 <div class="team-member-condensed"> <img src="https://via.placeholder.com/80/64CCC5/FFFFFF?text=L3" alt="Foto Líder 3" class="team-photo-condensed"> <div><h4>Sofia Quintero Manjarrés</h4><p class="team-title" data-lang-key="team_title_3">Gerente Clientes</p></div> </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+             <div id="home-results" class="home-subsection animate-on-scroll">
+                 <div class="container">
+                     <h2 data-lang-key="benefits_results_subtitle">Resultados Comprobables</h2>
+                      <div class="results-content">
+                         <p class="intro" data-lang-key="results_intro">Creemos en la evidencia y la transparencia. Utilizamos benchmarks del sector y análisis rigurosos. INDUS te muestra:</p>
+                         <div class="result-example">
+                             <h4 data-lang-key="results_case_study_title">Caso Destacado</h4>
+                             <p data-lang-key="results_case_study_text">Portafolio de crecimiento balanceado superó consistentemente su índice de referencia en un 12% anualizado (neto de comisiones) durante los últimos 5 años, gracias a la diversificación global y gestión táctica.</p>
+                         </div>
+                         <p class="disclaimer"><em><strong data-lang-key="results_disclaimer_label">Nota Importante:</strong> <span data-lang-key="results_disclaimer_text">El rendimiento pasado no garantiza resultados futuros. Toda inversión implica riesgos inherentes, incluida la posible pérdida de capital.</span></em></p>
+                     </div>
+                 </div>
+             </div>
+
+            <div class="home-final-cta section-bg animate-on-scroll">
+                <div class="container">
+                    <h2 data-lang-key="final_cta_title">¿Listo para Potenciar Tu Futuro Financiero?</h2>
+                    <p data-lang-key="final_cta_text">Contáctanos hoy para una consulta confidencial sin compromiso y descubre cómo la gestión patrimonial de LESO puede ayudarte a alcanzar tus metas financieras más ambiciosas.</p>
+                    <a href="#contact-brokers" class="cta-button" data-lang-key="final_cta_button">Solicitar Consulta Personalizada</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="podcast" class="page animate-on-scroll">
+            <div class="container">
+                <h2 data-lang-key="podcast_title">Podcast: De CEO A CEO</h2>
+                <p class="intro" data-lang-key="podcast_description">Conversaciones profundas con líderes empresariales sobre estrategia, innovación y los desafíos de dirigir organizaciones en el complejo entorno actual. Escucha y aprende directamente de quienes toman las decisiones.</p>
+
+                <div class="podcast-links-wrapper">
+                    <h3 data-lang-key="podcast_listen_on">Escúchalo en tu plataforma favorita:</h3>
+                    <div class="podcast-main-links">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="podcast-link primary youtube">
+                            <i class="fab fa-youtube fa-fw"></i> <span data-lang-key="podcast_listen_youtube">Ver en YouTube</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="podcast-link primary spotify">
+                            <i class="fab fa-spotify fa-fw"></i> <span data-lang-key="podcast_listen_spotify">Escuchar en Spotify</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="podcast-link primary apple">
+                            <i class="fab fa-apple fa-fw"></i> <span data-lang-key="podcast_listen_apple">Escuchar en Apple Podcasts</span>
+                        </a>
+                    </div>
+
+                    <h4 data-lang-key="podcast_follow_on">Síguenos también en:</h4>
+                    <div class="podcast-secondary-links">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="podcast-link secondary tiktok" data-lang-key="podcast_follow_tiktok_aria" aria-label="Síguenos en TikTok">
+                            <i class="fab fa-tiktok fa-fw"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="podcast-link secondary instagram" data-lang-key="podcast_follow_instagram_aria" aria-label="Síguenos en Instagram">
+                            <i class="fab fa-instagram fa-fw"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-brokers" class="page section-bg animate-on-scroll">
+             <div class="container">
+                 <h2 data-lang-key="contact_brokers_title">Contacto para Corredores</h2>
+                 <p class="intro" data-lang-key="contact_brokers_intro">Si representas a una firma de corretaje y buscas establecer sinergias estratégicas, por favor completa este formulario. Nuestro equipo se pondrá en contacto.</p>
+                 <form id="broker-contact-form">
+                     <div class="form-grid">
+                         <div class="form-group"> <label for="broker-name" data-lang-key="form_name">Nombre Completo</label><input type="text" id="broker-name" name="name" required> </div>
+                         <div class="form-group"> <label for="broker-email" data-lang-key="form_email">Correo Electrónico</label><input type="email" id="broker-email" name="email" required> </div>
+                         <div class="form-group form-group-full"> <label for="broker-company" data-lang-key="form_company">Empresa (Opcional)</label><input type="text" id="broker-company" name="company"> </div>
+                         <div class="form-group form-group-full"> <label for="broker-message" data-lang-key="form_message">Tu Mensaje</label><textarea id="broker-message" name="message" rows="5" required></textarea> </div>
+                     </div>
+                     <button type="submit" data-lang-key="form_send_button">Enviar Mensaje</button>
+                 </form>
+             </div>
+         </section>
+
+        <section id="careers" class="page animate-on-scroll">
+             <div class="container">
+                 <h2 data-lang-key="careers_title">Únete a Nuestro Equipo</h2>
+                 <p class="intro" data-lang-key="careers_intro">Buscamos talento excepcional con pasión por las finanzas, la tecnología y el servicio al cliente. Si crees que puedes aportar valor, revisa nuestras posiciones abiertas o envíanos tu candidatura espontánea.</p>
+                 <form id="career-form">
+                     <div class="form-grid">
+                         <div class="form-group"> <label for="career-name" data-lang-key="form_name">Nombre Completo</label><input type="text" id="career-name" name="name" required> </div>
+                         <div class="form-group"> <label for="career-email" data-lang-key="form_email">Correo Electrónico</label><input type="email" id="career-email" name="email" required> </div>
+                         <div class="form-group form-group-full"> <label for="career-cv" data-lang-key="form_cv">Adjuntar Hoja de Vida (PDF)</label><input type="file" id="career-cv" name="cv" accept=".pdf"> </div>
+                         <div class="form-group form-group-full"> <label for="career-message" data-lang-key="form_message_optional">Carta de Presentación (Opcional)</label><textarea id="career-message" name="message" rows="5"></textarea> </div>
+                    </div>
+                     <button type="submit" data-lang-key="form_submit_application">Enviar Candidatura</button>
+                 </form>
+             </div>
+        </section>
+
+        <section id="login" class="page section-bg animate-on-scroll">
+             <div class="container login-container auth-container">
+                 <h2 data-lang-key="login_title">Acceso Clientes INDUS</h2>
+                 <form id="login-form">
+                    <div class="form-group form-group-full"> <label for="username" data-lang-key="login_username">Email o Usuario</label><input type="text" id="username" name="username" required> </div>
+                    <div class="form-group form-group-full"> <label for="password" data-lang-key="login_password">Contraseña</label><input type="password" id="password" name="password" required> </div>
+                     <button type="submit" data-lang-key="login_button">Ingresar</button>
+                     <p id="login-error" class="error-message" style="display: none;" data-lang-key="login_error">Credenciales incorrectas. Verifica tus datos e intenta de nuevo.</p>
+                 </form>
+                 <div class="auth-switch"> <p data-lang-key="login_no_account">¿Primera vez aquí?</p> <a href="#register" class="switch-link" data-lang-key="login_register_link">Crea tu cuenta</a> </div>
+             </div>
+        </section>
+
+        <section id="register" class="page animate-on-scroll">
+             <div class="container register-container auth-container">
+                 <h2 data-lang-key="register_title">Registro de Nuevo Cliente</h2>
+                 <form id="register-form">
+                     <div class="form-group form-group-full"> <label for="reg-name" data-lang-key="register_name">Nombre Completo</label><input type="text" id="reg-name" name="name" required> </div>
+                     <div class="form-group form-group-full"> <label for="reg-email" data-lang-key="register_email">Correo Electrónico</label><input type="email" id="reg-email" name="email" required> </div>
+                     <div class="form-group form-group-full"> <label for="reg-password" data-lang-key="register_password">Crear Contraseña Segura</label><input type="password" id="reg-password" name="password" required> </div>
+                     <div class="form-group form-group-full"> <label for="reg-confirm-password" data-lang-key="register_confirm_password">Confirmar Contraseña</label><input type="password" id="reg-confirm-password" name="confirm_password" required> </div>
+                     <button type="submit" data-lang-key="register_button">Registrarme Ahora</button>
+                     <p id="register-error" class="error-message" style="display: none;" data-lang-key="register_error_placeholder">Ocurrió un error durante el registro.</p>
+                 </form>
+                 <div class="social-login">
+                     <p class="divider" data-lang-key="register_social_divider">o ingresa rápidamente con</p>
+                     <div class="social-buttons">
+                        <button class="social-button google" aria-label="Registrarse con Google"><i class="fab fa-google" aria-hidden="true"></i></button>
+                        <button class="social-button apple" aria-label="Registrarse con Apple"><i class="fab fa-apple" aria-hidden="true"></i></button>
+                        <button class="social-button twitter" aria-label="Registrarse con X (Twitter)"><i class="fab fa-twitter" aria-hidden="true"></i></button>
+                        <button class="social-button linkedin" aria-label="Registrarse con LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></button>
+                     </div>
+                      <p class="social-warning" data-lang-key="register_social_warning">(Login social simulado)</p>
+                 </div>
+                  <div class="auth-switch"> <p data-lang-key="register_has_account">¿Ya tienes una cuenta?</p> <a href="#login" class="switch-link" data-lang-key="register_login_link">Ingresa aquí</a> </div>
+             </div>
+        </section>
+
+        <section id="portfolio" class="page indus-app">
+             <div class="dashboard-layout">
+                 <aside class="dashboard-sidebar">
+                     <div class="sidebar-header"> <span class="sidebar-logo">INDUS</span> </div>
+                     <nav class="sidebar-nav">
+                         <ul>
+                             <li><a href="#portfolio-overview-card" class="sidebar-link active"><i class="fas fa-tachometer-alt fa-fw" aria-hidden="true"></i> <span data-lang-key="dashboard_nav_overview">Resumen</span></a></li>
+                             <li><a href="#portfolio-details-card" class="sidebar-link"><i class="fas fa-briefcase fa-fw" aria-hidden="true"></i> <span data-lang-key="dashboard_nav_assets">Detalle Activos</span></a></li>
+                             <li><a href="#portfolio-charts-card" class="sidebar-link"><i class="fas fa-chart-line fa-fw" aria-hidden="true"></i> <span data-lang-key="dashboard_nav_charts">Análisis Gráfico</span></a></li>
+                             <li><a href="#portfolio-transactions-card" class="sidebar-link"><i class="fas fa-exchange-alt fa-fw" aria-hidden="true"></i> <span data-lang-key="dashboard_nav_transactions">Historial Movimientos</span></a></li>
+                             <li><a href="#portfolio-settings-card" class="sidebar-link"><i class="fas fa-cog fa-fw" aria-hidden="true"></i> <span data-lang-key="dashboard_nav_settings">Configuración</span></a></li>
+                         </ul>
+                     </nav>
+                     <div class="sidebar-footer"> <button id="logout-button-sidebar" class="logout-button-sidebar"> <i class="fas fa-sign-out-alt fa-fw" aria-hidden="true"></i> <span data-lang-key="portfolio_logout">Cerrar Sesión</span> </button> </div>
+                 </aside>
+                 <div class="dashboard-main">
+                     <div class="dashboard-main-header">
+                         <h2 data-lang-key="portfolio_dashboard_title">Panel Principal</h2>
+                         {/* Botón Logout eliminado */}
+                     </div>
+                     <div class="dashboard-content">
+                         <div class="dashboard-card animate-on-scroll" id="portfolio-overview-card">
+                            <h3 data-lang-key="portfolio_summary_title">Resumen General</h3>
+                            <div class="portfolio-overview">
+                                 <p><span data-lang-key="portfolio_total_value">Valor Total Portafolio:</span> $ 125,340.50 USD</p>
+                                 <p><span data-lang-key="portfolio_ytd">Rendimiento Acumulado (Año):</span> + 8.2%</p>
+                                 <p><span data-lang-key="portfolio_last_update">Actualizado:</span> 6 de Abril, 2025</p>
+                             </div>
+                         </div>
+                         <div class="dashboard-card animate-on-scroll" id="portfolio-details-card">
+                             <h3 data-lang-key="portfolio_assets_title">Mis Activos</h3>
+                             <div class="portfolio-details">
+                                 <table>
+                                     <thead><tr><th data-lang-key="portfolio_table_asset">Instrumento</th><th data-lang-key="portfolio_table_quantity">Cantidad</th><th data-lang-key="portfolio_table_market_value">Valor Mercado</th><th data-lang-key="portfolio_table_percentage">% Total</th></tr></thead>
+                                     <tbody>
+                                          <tr> <td data-label="Instrumento">Acciones Globales ETF (VT)</td> <td data-label="Cantidad">350</td> <td data-label="Valor Mercado">$ 45,800.00</td> <td data-label="% Total">36.5%</td> </tr>
+                                          <tr> <td data-label="Instrumento">Bonos del Tesoro EEUU (TLT)</td> <td data-label="Cantidad">200</td> <td data-label="Valor Mercado">$ 28,150.00</td> <td data-label="% Total">22.5%</td> </tr>
+                                          <tr> <td data-label="Instrumento">Acción Local Ejemplo (ECOPETROL)</td> <td data-label="Cantidad">15000</td> <td data-label="Valor Mercado">$ 35,540.50</td> <td data-label="% Total">28.4%</td> </tr>
+                                          <tr> <td data-label="Instrumento">Efectivo e Inv. Corto Plazo</td> <td data-label="Cantidad">N/A</td> <td data-label="Valor Mercado">$ 15,850.00</td> <td data-label="% Total">12.6%</td> </tr>
+                                     </tbody>
+                                 </table>
+                             </div>
+                         </div>
+                          <div class="dashboard-card animate-on-scroll" id="portfolio-charts-card">
+                              <h3 data-lang-key="portfolio_charts_title">Visualización de Datos</h3>
+                              <div class="chart-placeholder"> <i class="fas fa-chart-pie fa-3x" aria-hidden="true"></i> <p data-lang-key="portfolio_chart_placeholder">[Gráficos interactivos de rendimiento y composición irían aquí]</p> </div>
+                          </div>
+                          <div class="dashboard-card animate-on-scroll" id="portfolio-transactions-card">
+                              <h3 data-lang-key="portfolio_transactions_title">Últimos Movimientos</h3>
+                              <ul class="transactions-list">
+                                   <li><span class="date">01/04/25</span> <span class="type buy">Compra</span> <span class="desc">10 VT</span> <span class="amount">-$1,310.00</span></li>
+                                   <li><span class="date">15/03/25</span> <span class="type dividend">Dividendo</span> <span class="desc">ECOPETROL</span> <span class="amount">+$450.00</span></li>
+                                   <li><span class="date">05/03/25</span> <span class="type sell">Venta</span> <span class="desc">50 TLT</span> <span class="amount">+$7,050.00</span></li>
+                                    <li><span class="date">01/03/25</span> <span class="type deposit">Depósito</span> <span class="desc">Transferencia</span> <span class="amount">+$10,000.00</span></li>
+                              </ul>
+                          </div>
+                          <div class="dashboard-card animate-on-scroll" id="portfolio-settings-card">
+                              <h3 data-lang-key="portfolio_settings_title">Preferencias</h3>
+                              <p data-lang-key="portfolio_settings_text">Configura alertas de mercado, notificaciones y preferencias de reportes personalizados.</p>
+                          </div>
+                         <div class="dashboard-card portfolio-actions animate-on-scroll">
+                             <h4 data-lang-key="portfolio_actions_title">Acciones Comunes</h4>
+                             <button class="action-button" data-lang-key="portfolio_action_report">Descargar Reporte PDF</button>
+                             <button class="action-button" data-lang-key="portfolio_action_rebalance">Discutir Rebalanceo</button>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+          <div class="container">
+             <div class="footer-logo">LESO</div>
+             <div class="footer-contact">
+                 <span data-lang-key="footer_contact_label">Contacto Directo:</span>
+                 <a href="mailto:contacto@leso.com" aria-label="Enviar correo a contacto@leso.com">contacto@leso.com</a>
+             </div>
+             <div class="footer-links">
+                 <a href="#" data-lang-key="footer_privacy">Política de Privacidad</a> |
+                 <a href="#" data-lang-key="footer_terms">Términos de Uso</a>
+                 </div>
+             <p class="made-by" data-lang-key="footer_omni">Desarrollado por OMNI.</p>
+             <p class="copyright">&copy; <span id="current-year"></span> LESO Asset Management. <span data-lang-key="footer_rights">Todos los derechos reservados.</span></p>
+         </div>
+     </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
