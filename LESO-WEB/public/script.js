@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pages = document.querySelectorAll('.page');
     const menuToggle = document.querySelector('.menu-toggle');
     const navbarUl = document.querySelector('.navbar ul');
+    // Formularios y Auth
     const loginForm = document.getElementById('login-form');
     const registerForm = document.getElementById('register-form');
     const authLink = document.getElementById('auth-link');
@@ -15,9 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginError = document.getElementById('login-error');
     const registerError = document.getElementById('register-error');
     const socialLoginButtons = document.querySelectorAll('.social-button');
+    // Footer
     const currentYearSpan = document.getElementById('current-year');
+    // Controles Header
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     const languageSelect = document.getElementById('language-select');
+    // Dashboard
     const sidebarLinks = document.querySelectorAll('.sidebar-link');
     const animatedSections = document.querySelectorAll('.animate-on-scroll');
     const scrollProgressBar = document.getElementById('scroll-progress-bar');
@@ -85,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'register_social_divider': 'or quickly sign up with', 'register_social_warning': '(Social login simulated)', 'register_has_account': 'Already have an account?', 'register_login_link': 'Login here',
             'social_login_not_implemented': 'Login with {PROVIDER} is simulated (requires backend setup).',
             'portfolio_title': 'INDUS - My Portfolio', 'portfolio_logout': 'Log Out', 'portfolio_welcome': 'Welcome back to your INDUS financial center.', 'portfolio_summary_title': 'General Summary (Example)', 'portfolio_total_value': 'Total Portfolio Value:', 'portfolio_ytd': 'Year-to-Date Performance:', 'portfolio_last_update': 'Updated:', 'portfolio_assets_title': 'My Assets (Example)',
-            'portfolio_table_asset': 'Instrument', 'portfolio_table_quantity': 'Quantity', 'portfolio_table_market_value': 'Market Value', 'portfolio_table_percentage': '% Portfolio', 'portfolio_table_loading': 'Loading data...',
+            'portfolio_table_asset': 'Instrument', 'portfolio_table_quantity': 'Quantity', 'portfolio_table_market_value': 'Market Value', 'portfolio_table_percentage': '% Total', 'portfolio_table_loading': 'Loading data...',
             'portfolio_dashboard_title': 'Main Dashboard', 'dashboard_nav_overview': 'Summary', 'dashboard_nav_assets': 'Asset Detail', 'dashboard_nav_charts': 'Graphic Analysis', 'dashboard_nav_transactions': 'Movement History', 'dashboard_nav_settings': 'Settings',
             'portfolio_charts_title': 'Data Visualization', 'portfolio_chart_placeholder': '[Interactive performance and composition charts would go here]',
             'portfolio_transactions_title': 'Recent Movements',
@@ -231,22 +235,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 history.replaceState(null, null, '#home');
             }
         }
-        if (requestedPageId === 'portfolio' && !isLoggedIn) {
-            requestedPageId = 'login';
-            window.location.hash = 'login';
+        if (requestedPageId === 'portfolio') { // MODIFICADO PARA PORTAFOLIO "PRÓXIMAMENTE"
+            alert(getTranslation('portfolio_coming_soon'));
+            requestedPageId = 'home';
+            window.location.hash = 'home';
         } else if ((requestedPageId === 'login' || requestedPageId === 'register') && isLoggedIn) {
-            requestedPageId = 'portfolio';
-            window.location.hash = 'portfolio';
+            requestedPageId = 'home'; // Si está logueado, llevarlo a home
+            window.location.hash = 'home';
         }
         showPage(requestedPageId);
         updateAuthUI(isLoggedIn);
-        if (requestedPageId === 'portfolio') {
-            const firstSidebarLink = document.querySelector('.sidebar-link');
-            if(firstSidebarLink) {
-                const targetId = firstSidebarLink.getAttribute('href').substring(1);
-                setActiveSidebarLink(targetId);
-            }
-        }
     }
 
     function handleLogout() {
@@ -255,6 +253,17 @@ document.addEventListener('DOMContentLoaded', () => {
          localStorage.removeItem('leso_user');
          window.location.hash = '#home';
      }
+     
+    function handleSuccessfulLogin(data) {
+        localStorage.setItem('leso_token', data.token);
+        localStorage.setItem('leso_user', JSON.stringify(data.user));
+        if(loginError) loginError.style.display = 'none';
+        
+        // MODIFICADO: En lugar de ir a #portfolio, mostrar alerta y ir a #home
+        alert(getTranslation('portfolio_coming_soon_after_login'));
+        window.location.hash = '#home';
+    }
+
 
     function addTableDataLabels() {
         const tables = document.querySelectorAll('.portfolio-details table');
@@ -313,11 +322,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 const isLoggedIn = checkLoginState();
                 let finalTargetHref = targetHref;
-                if (targetId === 'portfolio' && !isLoggedIn) { finalTargetHref = '#login'; }
-                else if ((targetId === 'login' || targetId === 'register') && isLoggedIn) { finalTargetHref = '#portfolio'; }
-                if (window.location.hash !== finalTargetHref) { window.location.hash = finalTargetHref; }
-                else { window.scrollTo({ top: 0, behavior: 'smooth' }); }
-                if (navbarUl && navbarUl.classList.contains('active')) { navbarUl.classList.remove('active'); }
+
+                // MODIFICADO PARA PORTAFOLIO "PRÓXIMAMENTE"
+                if (targetId === 'portfolio') {
+                    alert(getTranslation('portfolio_coming_soon'));
+                    finalTargetHref = '#home';
+                } else if ((targetId === 'login' || targetId === 'register') && isLoggedIn) {
+                    finalTargetHref = '#home';
+                }
+
+                if (window.location.hash !== finalTargetHref) {
+                    window.location.hash = finalTargetHref;
+                } else {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+                if (navbarUl && navbarUl.classList.contains('active')) {
+                    navbarUl.classList.remove('active');
+                }
             }
         }
     }); });
@@ -331,7 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Listener Cambio Idioma
     if (languageSelect) { languageSelect.addEventListener('change', (e) => { setLanguage(e.target.value); }); }
 
-    // Listener Login FUNCIONAL
+    // Listener Login FUNCIONAL (MODIFICADO para no ir al portafolio)
     if (loginForm) {
         loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -344,10 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
                 if (!response.ok) { throw new Error(data.message || 'Error al iniciar sesión.'); }
                 console.log('Login exitoso:', data);
-                // --- MANEJO DE ÉXITO ---
-                localStorage.setItem('leso_token', data.token);
-                localStorage.setItem('leso_user', JSON.stringify(data.user));
-                window.location.hash = '#portfolio';
+                handleSuccessfulLogin(data);
             } catch (error) {
                 console.error('Error en el login:', error);
                 if (errorEl) { errorEl.textContent = error.message; errorEl.style.display = 'block'; }
@@ -382,19 +400,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Listener Simulación Social Login
-    socialLoginButtons.forEach(button => { button.addEventListener('click', (e) => { e.preventDefault(); const provider = button.getAttribute('aria-label').split(' ').pop() || 'Social'; const messageTemplate = getTranslation('social_login_not_implemented'); const message = messageTemplate.replace('{PROVIDER}', provider); alert(message); console.warn(`Intento de login con ${provider} (no implementado).`); }); });
+    // Listener Simulación Social Login (Actualizado)
+    socialLoginButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const provider = button.getAttribute('aria-label')?.split(' ').pop() || 'Social';
+            let message = '';
+            if (provider === 'OMNI') {
+                message = getTranslation('social_login_omni_coming_soon');
+            } else {
+                const messageTemplate = getTranslation('social_login_not_implemented');
+                message = messageTemplate.replace('{PROVIDER}', provider);
+            }
+            alert(message);
+        });
+    });
 
-    // Listener Formularios Contacto/Carreras
-    const brokerForm = document.getElementById('broker-contact-form'); const careerForm = document.getElementById('career-form');
-    function handleFormSubmit(form, formName) { if (form) { form.addEventListener('submit', (e) => { e.preventDefault(); console.log(`Formulario ${formName} enviado (simulado). Datos:`, Object.fromEntries(new FormData(form).entries())); alert(`Formulario "${formName}" enviado (simulación). ¡Gracias!`); form.reset(); }); } }
-    handleFormSubmit(brokerForm, 'Contactar Corredores'); handleFormSubmit(careerForm, 'Trabaja con Nosotros');
+    // Formularios de Contacto y Carreras AHORA SON MANEJADOS POR NETLIFY
+    // Se elimina la función handleFormSubmit
 
     // Listeners de Logout (Unificados)
     // if (logoutButtonMain) { logoutButtonMain.addEventListener('click', handleLogout); } // Eliminado del HTML
     if (logoutButtonSidebar) { logoutButtonSidebar.addEventListener('click', handleLogout); }
 
-    // Listeners para navegación interna del Dashboard (Sidebar)
+    // Listeners para navegación interna del Dashboard
      sidebarLinks.forEach(link => { link.addEventListener('click', (e) => { e.preventDefault(); const targetId = link.getAttribute('href')?.substring(1); if (!targetId) return; const targetElement = document.getElementById(targetId); if (targetElement) { targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); setActiveSidebarLink(targetId); } }); });
 
     // Observer para data-labels
